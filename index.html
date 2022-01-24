@@ -46,8 +46,12 @@
                   {{item.price}}
                 </td>
                 <td width="150">
-                  <span class="text-success" v-if="item.is_enabled">啟用</span>
-                  <span v-else>未啟用</span>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" :id="item.id" checked v-model="item.is_enabled"
+                      :true-value="1" :false-value="0">
+                    <label class="form-check-label text-success" :for="item.id" v-if="item.is_enabled">啟用</label>
+                    <label class="form-check-label text-secondary" :for="item.id" v-else>未啟用</label>
+                  </div>
                 </td>
                 <td width="120">
                   <button type="button" class="btn btn-primary" @click=" temp = item ">查看細節</button>
@@ -76,7 +80,7 @@
                 </div>
               </div>
             </div>
-            <template v-if="temp.title" v-for="item in temp.imagesUrl">
+            <template v-for="(item,index) in temp.imagesUrl" :key="index">
               <img :src="item" alt="" class="images m-2">
             </template>
           </template>
@@ -92,7 +96,6 @@
       data() {
         return {
           ...productData,
-          temp: {}
         }
       }
     }

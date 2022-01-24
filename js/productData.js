@@ -52,5 +52,6 @@ export const productData = {
         'https://images.unsplash.com/photo-1540337706094-da10342c93d8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fGNha2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
       ]
     }
-  ]
+  ],
+  temp: {}
 }
